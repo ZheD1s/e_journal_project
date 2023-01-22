@@ -5,6 +5,7 @@ from .models import *
 
 def homeView(request):
     thisUser = request.user
+    subjects = Subject.objects.all() # get data from table Subject
     try:
         thisStudent = Student.objects.get(user_id=thisUser) # Get data from table Student
         thisUserType = 'Student'
@@ -13,5 +14,6 @@ def homeView(request):
     return render(request,
                   template_name='home.html',
                   context={
-                      'type': thisUserType
+                      'type': thisUserType,
+                      'subjects': subjects
                   }) # context - datas to show on template

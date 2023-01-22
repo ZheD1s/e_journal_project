@@ -12,6 +12,10 @@
                 Log Out
             </button>
         </a>
+        {% for subject in subjects %}
+            <h3>Subject name: {{ subject.title }}</h3>
+            <p>Price: {{ subject.price }}</p>
+        {% endfor %}
     {% else %}
         <h1>You not auth</h1>
         <a href="{% url 'login' %}">
