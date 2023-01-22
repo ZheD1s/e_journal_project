@@ -17,3 +17,12 @@ def homeView(request):
                       'type': thisUserType,
                       'subjects': subjects
                   }) # context - datas to show on template
+
+def lessonsView(request):
+    thisUser = request.user
+    all_subjects = Teacher.objects.get(user_id=thisUser).subject.all()
+    return render(request,
+            template_name='my_subjects.html',
+            context={
+                'subjects': all_subjects
+            })

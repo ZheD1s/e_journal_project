@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>My Subjects</title>
+</head>
+<body>
+    {% for subject in subjects %}
+        <h3>Subject name: {{ subject.title }}</h3>
+        <p>Price: {{ subject.price }}</p>
+    {% endfor %}
+</body>
+</html>
