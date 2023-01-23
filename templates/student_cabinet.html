@@ -1,20 +1,14 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Student Cabinet</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
     <h1>{{ student.name }} {{ user.surname }}</h1>
     <h4>{{ student.group.name }}</h4>
     <h1>Your Grades History:</h1>
     <ul>
         {% for grade in grades %}
             <li>
-                <h3>Subject: {{ grade.subject.title }}:</h3>
+                <h3>Subject title: {{ grade.subject.title }}:</h3>
                 <p>Points: {{ grade.points }}</p>
             </li>
         {% endfor %}
     </ul>
-</body>
-</html>
+{% endblock content %}
