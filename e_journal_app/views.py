@@ -26,3 +26,14 @@ def lessonsView(request):
             context={
                 'subjects': all_subjects
             })
+
+def studentCabinetView(request):
+    thisStudent = Student.objects.get(user_id=request.user)
+    thisGrades = Grade.objects.filter(student=thisStudent)
+    # filter - get many records from table with (student=thisStudent) condition
+    return render(request,
+                  'student_cabinet.html',
+                  context={
+                      'student': thisStudent,
+                      'grades': thisGrades
+                  })
