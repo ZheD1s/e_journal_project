@@ -22,6 +22,11 @@
         {% for subject in subjects %}
             <h3>Subject name: {{ subject.title }}</h3>
             <p>Price: {{ subject.price }}</p>
+            <a href="">
+                <button>
+                    My cabinet
+                </button>
+            </a>
         {% endfor %}
     {% else %}
         <h1>You not auth</h1>

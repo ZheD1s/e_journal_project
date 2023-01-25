@@ -53,12 +53,12 @@ def groupsView(request):
                       'groups': all_groups,
                   })
 
-def groupStudentView(request):
-    all_student = Student.objects.all()
+def groupStudentView(request, group_id):
+    query = Student.objects.filter(group=Group.objects.get(id=group_id))
     return render(request,
                   'group_student.html',
                   context={
-                      'students': all_student,
+                      'students': query,
                   })
 
 

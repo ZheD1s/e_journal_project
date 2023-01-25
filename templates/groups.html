@@ -1,8 +1,9 @@
 {% extends 'base.html' %}
 {% block content %}
     {% for group in groups %}
-        <a href="{% url 'group_student' %}">
+        <a href="{% url 'group_student' group.id %}">
             {{ group.name }}
         </a>
+        <br>
     {% endfor %}
 {% endblock content %}
