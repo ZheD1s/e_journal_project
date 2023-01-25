@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for student in students %}
+        {% if group.id == student.group %}
+            <p>{{ student.name }}</p>
+            <p>{{ group.id }}</p>
+        {% endif %}
+    {% endfor %}
+{% endblock content %}

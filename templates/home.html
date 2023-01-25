@@ -2,11 +2,18 @@
 {% block content %}
     {% if user.is_authenticated %}
         <h1>{{ type }} - {{ user.username }}</h1>
-        <a href="{% url 'student_cabinet' %}">
+        <a href="{% url 'cabinet' %}">
             <button>
                 My cabinet
             </button>
         </a>
+        <br>
+        <a href="{% url 'groups' %}">
+            <button>
+                Groups
+            </button>
+        </a>
+        <br>
         <a href="{% url 'logout' %}">
             <button>
                 Log Out
@@ -24,5 +31,4 @@
             </button>
         </a>
     {% endif %}
-
 {% endblock content %}

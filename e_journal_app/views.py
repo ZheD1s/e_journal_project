@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .models import *
 
 # Create your views here.
@@ -37,3 +37,28 @@ def studentCabinetView(request):
                       'student': thisStudent,
                       'grades': thisGrades
                   })
+
+def cabinetView(request):
+    try:
+        Student.objects.get(user_id=request.user)
+        return redirect('student_cabinet')
+    except:
+        return redirect('home')
+
+def groupsView(request):
+    all_groups = Group.objects.all()
+    return render(request,
+                  'groups.html',
+                  context={
+                      'groups': all_groups,
+                  })
+
+def groupStudentView(request):
+    all_student = Student.objects.all()
+    return render(request,
+                  'group_student.html',
+                  context={
+                      'students': all_student,
+                  })
+
+
