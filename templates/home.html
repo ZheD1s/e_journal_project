@@ -19,14 +19,15 @@
                 Log Out
             </button>
         </a>
-        {% for subject in subjects %}
+        <br>
+        <a href="{% url 'all_students' %}">
+            <button>
+                Set Attendance
+            </button>
+        </a>
+        {% for subject in subjects.all %}
             <h3>Subject name: {{ subject.title }}</h3>
             <p>Price: {{ subject.price }}</p>
-            <a href="">
-                <button>
-                    My cabinet
-                </button>
-            </a>
         {% endfor %}
     {% else %}
         <h1>You not auth</h1>
@@ -35,5 +36,6 @@
                 Log In
             </button>
         </a>
+        <br>
     {% endif %}
 {% endblock content %}
