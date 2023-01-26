@@ -1,0 +1,6 @@
+{% extends 'base.html' %}
+{% block content %}
+    {% for subject in new_subjects %}
+        <h1>{{ subject.title }}</h1>
+    {% endfor %}
+{% endblock content %}

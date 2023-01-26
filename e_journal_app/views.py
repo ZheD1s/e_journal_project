@@ -91,3 +91,16 @@ def changeStudentView(request):
                       context={
                           'student': Student.objects.get(user_id=request.user),
                       })
+
+def teacherAddSubjectView(request):
+    if request.method == 'POST':
+        pass
+    else:
+        teachersSubjects = set(Teacher.objects.get(user_id=request.user).subject.all())
+        allSubjects = set(Subject.objects.all())
+        newSubjects = allSubjects.difference(teachersSubjects)
+        return render(request,
+                      'add_subject.html',
+                      context={
+                          'new_subjects': newSubjects
+                      })

@@ -10,5 +10,6 @@ urlpatterns = [
     path('groups/', groupsView, name='groups'),
     path('students/', allStudentsListView, name='all_students'),
     path('student_change_info/', changeStudentView, name='change_student'),
+    path('add_new_subjects/', teacherAddSubjectView, name='add_subjects'),
     path('', homeView, name='home'),
 ]

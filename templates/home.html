@@ -25,6 +25,12 @@
                 Set Attendance
             </button>
         </a>
+        <br>
+        <a href="{% url 'add_subjects' %}">
+            <button>
+                Add New Subject
+            </button>
+        </a>
         {% for subject in subjects.all %}
             <h3>Subject name: {{ subject.title }}</h3>
             <p>Price: {{ subject.price }}</p>
