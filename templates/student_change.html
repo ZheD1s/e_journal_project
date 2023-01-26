@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+{% block content %}
+    <form action="{% url 'change_student' %}" method="post">
+        {%  csrf_token %}
+        <label for="name_id">Change Your name:</label>
+        <input type="text" id="name_id" name="name_input" placeholder="{{ student.name }}">
+        <label for="surname_id">Change Your name:</label>
+        <input type="text" id="surname_id" name="surname_input" placeholder="{{ student.surname }}">
+        <input type="submit" value="Change">
+    </form>
+{% endblock content %}

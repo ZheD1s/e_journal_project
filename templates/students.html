@@ -2,5 +2,7 @@
 {% block content %}
     {% for student in students %}
         <h1>{{ student.surname }}  {{ student.name }} {{ student.group }}</h1>
+        <label for="{{ student.id }}">Attended</label>
+        <input type="checkbox" name="{{ student_id }}">
     {% endfor %}
 {% endblock content %}

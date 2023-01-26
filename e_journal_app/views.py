@@ -77,3 +77,17 @@ def allStudentsListView(request):
                   context={
                       'students': students,
                   })
+
+def changeStudentView(request):
+    if request.method == 'POST':
+        thisStudent = Student.objects.get(user_id=request.user)
+        thisStudent.name = request.POST.get('name_input')
+        thisStudent.surname = request.POST.get('surname_input')
+        thisStudent.save()
+        return redirect('student_cabinet')
+    else:
+        return render(request,
+                      'student_change.html',
+                      context={
+                          'student': Student.objects.get(user_id=request.user),
+                      })

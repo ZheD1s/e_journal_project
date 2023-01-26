@@ -1,7 +1,12 @@
 {% extends 'base.html' %}
 {% block content %}
-    <h1>{{ student.name }} {{ user.surname }}</h1>
+    <h1>{{ student.name }} {{ student.surname }}</h1>
     <h4>{{ student.group.name }}</h4>
+    <a href="{% url 'change_student' %}">
+        <button>
+            Change name/surname
+        </button>
+    </a>
     <h1>Your Grades History:</h1>
     <ul>
         {% for grade in grades %}

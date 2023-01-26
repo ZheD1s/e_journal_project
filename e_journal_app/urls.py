@@ -9,5 +9,6 @@ urlpatterns = [
     path('student_cabinet/', studentCabinetView, name='student_cabinet'),
     path('groups/', groupsView, name='groups'),
     path('students/', allStudentsListView, name='all_students'),
+    path('student_change_info/', changeStudentView, name='change_student'),
     path('', homeView, name='home'),
 ]
