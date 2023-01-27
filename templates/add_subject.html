@@ -1,6 +1,17 @@
 {% extends 'base.html' %}
 {% block content %}
-    {% for subject in new_subjects %}
-        <h1>{{ subject.title }}</h1>
-    {% endfor %}
+    <h1>
+        <label for="subjects">
+            Choice new subjects:
+        </label>
+    </h1>
+    <form id="add_subject_form" method="post" action="{% url 'add_subjects' %}">
+        {% csrf_token %}
+        <select name="subjects" id="subjects" form="add_subject_form">
+            {% for subject in new_subjects %}
+                <option value="{{ subject.id }}">{{ subject.title }}</option>
+            {% endfor %}
+        </select>
+        <input type="submit" value="Add New Subject">
+    </form>
 {% endblock content %}
