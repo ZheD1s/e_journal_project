@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+from django.views.generic import DeleteView, DetailView
+from django.urls import reverse_lazy
 from .models import *
 
 # Create your views here.
@@ -113,3 +115,12 @@ def teacherAddSubjectView(request):
                           'new_subjects': newSubjects
                       })
 
+class SubjectDetailView(DetailView):
+    model = Subject
+    template_name = 'subject_detail.html'
+    context_object_name = 'subject_detail'
+
+class subjectDeleteView(DeleteView):
+    model = Subject
+    template_name = 'subject_delete.html'
+    success_url = reverse_lazy('home')

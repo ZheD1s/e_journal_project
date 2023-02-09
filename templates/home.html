@@ -33,7 +33,12 @@
         </a>
         {% for subject in subjects.all %}
             <h3>Subject name: {{ subject.title }}</h3>
-            <p>Price: {{ subject.price }}</p>
+<!--            <p>Price: {{ subject.price }}</p>-->
+            <a href="{% url 'subject_detail' subject.id %}">
+                <button>
+                    Subject Detail
+                </button>
+            </a>
         {% endfor %}
     {% else %}
         <h1>You not auth</h1>

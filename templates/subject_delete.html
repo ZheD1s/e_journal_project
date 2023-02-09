@@ -1,10 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+  <h1>Delete Fruit</h1>
+      <form action="" method="post">
+          {% csrf_token %}
+          <p>Are you sure you want to delete fruit {{ subject_detail.title }}?</p>
+          <input type="submit" value="Delete">
+      </form>
+{% endblock content %}

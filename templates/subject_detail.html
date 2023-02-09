@@ -1,10 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <title>$Title$</title>
-</head>
-<body>
-$END$
-</body>
-</html>
+{% extends 'base.html' %}
+{% block content %}
+    {% csrf_token %}
+    <h1>Subject Detail</h1>
+    <p><b>Subject title:</b> {{ subject_detail.title }}</p>
+    <p><b>Subject price:</b> {{ subject_detail.price }}</p>
+    <a href="{% url 'subject_delete' subject_detail.id %}">
+                <button>
+                    Subject Delete
+                </button>
+            </a>
+{% endblock content %}
